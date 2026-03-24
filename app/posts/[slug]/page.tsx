@@ -23,7 +23,7 @@ function getTagClass(tag: string): string {
 
 export function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map((post) => ({ slug: encodeURIComponent(post.slug) }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {

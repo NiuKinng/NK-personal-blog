@@ -78,7 +78,7 @@ export default async function TagPage({ params }: PageProps) {
               className="animate-fade-in-up border border-[var(--card-border)] rounded-xl p-6 hover:border-[var(--primary)] transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms`, backgroundColor: 'var(--card-bg)' }}
             >
-              <Link href={`/posts/${encodeURIComponent(post.slug)}/`} className="block">
+              <Link href={`/posts/${post.slug}/`} className="block">
                 <h2 className="text-xl font-medium mb-2 hover:text-[var(--primary)] transition-colors">
                   {post.title}
                 </h2>
