@@ -34,7 +34,7 @@ export const postsConfig: PostConfig[] = [
     readingTime: '3 分钟',
   },
   {
-    slug: '第四篇',
+    slug: 'fourth-post',
     title: '第四篇博客',
     date: '2026-03-25',
     category: '日常',
