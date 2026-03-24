@@ -33,4 +33,12 @@ export const postsConfig: PostConfig[] = [
     tags: ['GitHub Pages', '部署', 'DevOps'],
     readingTime: '3 分钟',
   },
+  {
+    slug: '第四篇',
+    title: '第四篇博客',
+    date: '2026-03-25',
+    category: '日常',
+    tags: ['JavaScript', 'React', 'Claude code'],
+    readingTime: '1 分钟',
+  },
 ];

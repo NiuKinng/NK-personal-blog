@@ -5,7 +5,9 @@
       "Bash(npm run:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(grep -l \"basePath\\\\|assetPrefix\" out/**/*.html)",
+      "Bash(xargs head:*)"
     ]
   }
 }
