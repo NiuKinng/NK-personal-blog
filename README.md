@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 个人博客
 
-## Getting Started
+基于 [Next.js](https://nextjs.org) + [MDX](https://mdxjs.com/) 构建的个人博客系统。
 
-First, run the development server:
+## 快速开始
 
 ```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 构建静态网站（用于部署）
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+开发服务器启动后，访问 [http://localhost:3000](http://localhost:3000)。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 项目结构
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+my-blog/
+├── app/                    # Next.js App Router 页面
+│   ├── page.tsx           # 首页
+│   ├── layout.tsx        # 布局组件
+│   ├── categories/        # 分类页面
+│   ├── tags/             # 标签页面
+│   └── posts/            # 文章详情页面
+├── content/posts/         # MDX 文章存放目录
+├── lib/                  # 工具函数
+│   └── posts-config.ts   # 文章配置
+└── out/                  # 静态导出目录（部署用）
+```
 
-## Learn More
+## 写作指南
 
-To learn more about Next.js, take a look at the following resources:
+### 添加新文章
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. 在 `content/posts/` 目录下创建 `.mdx` 文件
+2. 在 `lib/posts-config.ts` 中添加文章元数据
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+示例文章格式：
 
-## Deploy on Vercel
+```mdx
+---
+title: 我的文章标题
+date: 2026-03-24
+category: 技术
+tags: [Next.js, React]
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 文章正文
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+这里是文章内容...
+```
+
+### 文章元数据说明
+
+| 字段 | 说明 |
+|------|------|
+| title | 文章标题 |
+| date | 发布日期（YYYY-MM-DD）|
+| category | 分类（建议使用中文）|
+| tags | 标签数组 |
+
+## 部署到 GitHub Pages
+
+1. 将代码推送到 GitHub 仓库
+2. 在 GitHub 仓库设置中启用 Pages（选择 GitHub Actions 作为来源）
+3. 每次推送到 main 分支时，会自动构建并部署
+
+或者手动部署：
+
+```bash
+npm run build
+# 将 out/ 目录下的内容推送到 gh-pages 分支
+```
+
+## 技术栈
+
+- **Next.js 14** - React 框架
+- **MDX** - Markdown + JSX
+- **Tailwind CSS** - 样式
+- **GitHub Pages** - 托管
