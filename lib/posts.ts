@@ -60,8 +60,7 @@ function getPostSlugs(): string[] {
 
 export function getPostBySlug(slug: string): Post | null {
   try {
-    const decodedSlug = decodeURIComponent(slug);
-    const fullPath = path.join(postsDirectory, `${decodedSlug}.mdx`);
+    const fullPath = path.join(postsDirectory, `${slug}.mdx`);
     if (!fs.existsSync(fullPath)) {
       return null;
     }
@@ -70,7 +69,7 @@ export function getPostBySlug(slug: string): Post | null {
     const rt = readingTime(content);
 
     return {
-      slug: decodedSlug,
+      slug,
       title: data.title || 'Untitled',
       date: data.date ? new Date(data.date).toISOString().split('T')[0] : '',
       category: data.category || 'Uncategorized',
