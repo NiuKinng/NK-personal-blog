@@ -8,6 +8,7 @@ const notoSansSC = Noto_Sans_SC({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-sans",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
