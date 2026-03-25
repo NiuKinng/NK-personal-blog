@@ -36,7 +36,7 @@ function getPostsByCategoryStatic(category: string) {
 
 export function generateStaticParams() {
   const categories = getCategories();
-  return categories.map((category) => ({ category: encodeURIComponent(category) }));
+  return categories.map((category) => ({ category }));
 }
 
 export async function generateMetadata({ params }: PageProps) {

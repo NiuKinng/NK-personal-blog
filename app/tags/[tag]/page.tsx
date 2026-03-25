@@ -36,7 +36,7 @@ function getPostsByTagStatic(tag: string) {
 
 export function generateStaticParams() {
   const tags = getTags();
-  return tags.map((tag) => ({ tag: encodeURIComponent(tag) }));
+  return tags.map((tag) => ({ tag }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
